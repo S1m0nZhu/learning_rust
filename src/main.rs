@@ -1,26 +1,14 @@
-struct User {
-    username: String,
-    email: String,
-    sign_in_count: u64,
-    active: bool,
+//_通配符
+fn match_control_flow() {
+    let some_u8_value = 18;
+    match some_u8_value {
+        1 => println!("one"),
+        3 => println!("three"),
+        5 => println!("five"),
+        7 => println!("seven"),
+        _ => (),
+    }
 }
 fn main() {
-    let mut user1 = User {
-        email: String::from("zm349@qq.com"),
-        username: String::from("S1m0nZhu"),
-        active: true,
-        sign_in_count: 1,
-    };
-
-    user1.email = String::from("zhumeng369@gmail.com");
-}
-
-//build_user 函数获取 email 和用户名并返回 User 实例
-fn build_user(email: String, username: String) -> User {
-    User {
-        email: email,
-        username: username,
-        active: true,
-        sign_in_count: 1,
-    }
+    match_control_flow();
 }
