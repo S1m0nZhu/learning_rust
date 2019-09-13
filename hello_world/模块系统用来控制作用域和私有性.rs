@@ -162,8 +162,20 @@ fn main() {
 [dependencies]
 rand = "0.5.5"
 //嵌套路径来消除大量的use行
+use std::cmp::Ordering;
+use std::io;
 
+use std::{cmp::Ordering, io};
 //通过glob运算符将所有的公有定义引入作用域
+//如果希望将一个路径下 所有 公有项引入作用域，可以指定路径后跟 *，glob 运算符：
+use std::collections::*;
+
 
 //将模块分割进不同文件
+//文件名: src/sound.rs
+pub mod instrument;
 
+//文件名: src/sound/instrument.rs
+pub fn clarinet() {
+    // 函数体
+}
